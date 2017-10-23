@@ -8,36 +8,42 @@ import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
 import { FriendsListPage } from '../pages/friends-list/friends-list';
 import { FriendsDetailsPage } from '../pages/friends-details/friends-details';
+import { FriendsPostsPage } from '../pages/friends-posts/friends-posts';
+import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 @NgModule({
-  declarations: [
-    MyApp,
-    HelloIonicPage,
-    ItemDetailsPage,
-    ListPage,
-    FriendsListPage,
-    FriendsDetailsPage
-  ],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp),
-  ],
-  bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    HelloIonicPage,
-    ItemDetailsPage,
-    ListPage,
-    FriendsListPage,
-    FriendsDetailsPage
-  ],
-  providers: [
-    StatusBar,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
-  ]
+    declarations: [
+        MyApp,
+        HelloIonicPage,
+        ItemDetailsPage,
+        ListPage,
+        FriendsListPage,
+        FriendsDetailsPage,
+        FriendsPostsPage,
+        TabsPage
+    ],
+    imports: [
+        BrowserModule,
+        IonicModule.forRoot(MyApp),
+    ],
+    bootstrap: [IonicApp],
+    entryComponents: [
+        MyApp,
+        HelloIonicPage,
+        ItemDetailsPage,
+        ListPage,
+        FriendsListPage,
+        FriendsDetailsPage,
+        FriendsPostsPage,
+        TabsPage
+    ],
+    providers: [
+        StatusBar,
+        SplashScreen,
+        {provide: ErrorHandler, useClass: IonicErrorHandler}
+    ]
 })
 export class AppModule {}

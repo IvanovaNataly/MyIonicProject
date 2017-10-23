@@ -4,10 +4,11 @@ import { Platform, MenuController, Nav } from 'ionic-angular';
 
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ListPage } from '../pages/list/list';
+import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import {FriendsListPage} from "../pages/friends-list/friends-list";
+import { FriendsListPage } from "../pages/friends-list/friends-list";
 
 
 @Component({
@@ -32,7 +33,8 @@ export class MyApp {
     this.pages = [
       { title: 'Hello Ionic', component: HelloIonicPage },
       { title: 'My First List', component: ListPage },
-      { title: 'Friends List', component: FriendsListPage}
+      { title: 'Friends List', component: FriendsListPage},
+        { title: 'Tabs', component: TabsPage}
     ];
   }
 
@@ -48,6 +50,7 @@ export class MyApp {
   openPage(page) {
     // close the menu when clicking a link from the menu
     this.menu.close();
+    console.log(page);
     // navigate to the new page if it is not the current page
     this.nav.setRoot(page.component);
   }

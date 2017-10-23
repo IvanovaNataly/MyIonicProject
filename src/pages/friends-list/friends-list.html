@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Friends List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <div class="friends-list-container">
+        <ion-list>
+            <button ion-item *ngFor="let item of items" (click)="friendTapped($event, item)">
+                <ion-avatar item-start>
+                    <img [src]="item.avatar">
+                </ion-avatar>
+
+                {{item.name}}
+
+            </button>
+        </ion-list>
+
+        <div class="profile">
+            <div class="profile-img-cont">
+                <img src="./assets/imgs/avatar.jpg" alt="" class="profile-img">
+            </div>
+            <p class="profile-name">Some user</p>
+        </div>
+    </div>
+
+</ion-content>

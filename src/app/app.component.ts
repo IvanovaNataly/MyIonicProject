@@ -19,7 +19,11 @@ export class MyApp {
 
   // make HelloIonicPage the root (or first) page
   rootPage = HelloIonicPage;
-  pages: Array<{title: string, component: any}>;
+  // pages: Array<{title: string, component: any}>;
+  //   pagesTabs: Array<{title: string, component: any}>;
+  // pagesArr: Array<{title: string, component: any}>;
+    pages: {};
+    objectKeys = Object.keys;
 
   constructor(
     public platform: Platform,
@@ -29,13 +33,20 @@ export class MyApp {
   ) {
     this.initializeApp();
 
-    // set our app's pages
-    this.pages = [
-      { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'My First List', component: ListPage },
-      { title: 'Friends List', component: FriendsListPage},
-        { title: 'Tabs', component: TabsPage}
-    ];
+      // set our app's pages
+      this.pages = {
+          Tabs: [
+          { title: 'Tabs', component: TabsPage}
+      ],
+
+        Social: [
+          { title: 'Hello Ionic', component: HelloIonicPage },
+          { title: 'My First List', component: ListPage },
+          { title: 'Friends List', component: FriendsListPage},
+      ]
+      };
+
+
   }
 
   initializeApp() {

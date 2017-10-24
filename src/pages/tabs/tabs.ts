@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 
 import { FriendsPostsPage } from '../friends-posts/friends-posts';
+import { HelloIonicPage } from '../hello-ionic/hello-ionic';
+import { FriendsListPage } from '../friends-list/friends-list';
 
 
 @Component({
@@ -10,8 +12,8 @@ export class TabsPage {
     // this tells the tabs component which Pages
     // should be each tab's root Page
     tab1Root: any = FriendsPostsPage;
-    tab2Root: any = FriendsPostsPage;
-    tab3Root: any = FriendsPostsPage;
+    tab2Root: any = HelloIonicPage;
+    tab3Root: any = FriendsListPage;
 
     constructor() {
 

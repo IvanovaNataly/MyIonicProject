@@ -1,18 +1,21 @@
 <ion-menu [content]="content">
 
-  <ion-header>
+    <ion-header>
     <ion-toolbar>
-      <ion-title>Pages</ion-title>
+    <ion-title>Pages</ion-title>
     </ion-toolbar>
-  </ion-header>
+    </ion-header>
 
-  <ion-content>
-    <ion-list>
-      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
-      </button>
-    </ion-list>
-  </ion-content>
+    <ion-content>
+        <ion-list>
+              <ion-item-group *ngFor="let key of objectKeys(pages)">
+                <ion-item-divider color="light">{{key}}</ion-item-divider>
+                <button ion-item *ngFor="let page of pages[key]" (click)="openPage(page)">
+                    {{page.title}}
+                </button>
+            </ion-item-group>
+        </ion-list>
+    </ion-content>
 
 </ion-menu>
 

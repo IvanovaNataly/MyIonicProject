@@ -1,10 +1,17 @@
-.card {
-    height: 96%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
+page-friends-details{
+    .friend-details-card {
+        height: 96%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 
-.content {
-    flex-grow: 2;
+    .content {
+        flex-grow: 2;
+    }
+
+    .label {
+        text-align: left;
+        margin-left: 8px;
+    }
 }

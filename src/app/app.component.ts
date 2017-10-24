@@ -12,42 +12,44 @@ import { FriendsListPage } from "../pages/friends-list/friends-list";
 
 
 @Component({
-  templateUrl: 'app.html'
+    templateUrl: 'app.html'
 })
 export class MyApp {
-  @ViewChild(Nav) nav: Nav;
+    @ViewChild(Nav) nav: Nav;
 
-  // make HelloIonicPage the root (or first) page
-  rootPage = HelloIonicPage;
-  // pages: Array<{title: string, component: any}>;
-  //   pagesTabs: Array<{title: string, component: any}>;
-  // pagesArr: Array<{title: string, component: any}>;
+    // make HelloIonicPage the root (or first) page
+    rootPage = TabsPage;
+    // pages: Array<{title: string, component: any}>;
     pages: {};
     objectKeys = Object.keys;
 
-  constructor(
-    public platform: Platform,
-    public menu: MenuController,
-    public statusBar: StatusBar,
-    public splashScreen: SplashScreen
-  ) {
-    this.initializeApp();
+    constructor(
+        public platform: Platform,
+        public menu: MenuController,
+        public statusBar: StatusBar,
+        public splashScreen: SplashScreen
+        ) {
+            this.initializeApp();
 
-      // set our app's pages
-      this.pages = {
-          Tabs: [
-          { title: 'Tabs', component: TabsPage}
-      ],
+        // set our app's pages
+            this.pages = {
+                Tabs: [
+                    { title: 'Home', component: TabsPage}
+                ],
 
-        Social: [
-          { title: 'Hello Ionic', component: HelloIonicPage },
-          { title: 'My First List', component: ListPage },
-          { title: 'Friends List', component: FriendsListPage},
-      ]
-      };
+                Catalog: [
+                    { title: 'Carpets & Rugs', component: HelloIonicPage },
+                    { title: 'Decorative Accessories', component: ListPage },
+                    { title: 'Lighting', component: FriendsListPage},
+                    { title: 'Pillows', component: HelloIonicPage }
+                ],
 
+                Social: [
+                    { title: 'Friends List', component: FriendsListPage},
+                ]
+            };
 
-  }
+    }
 
   initializeApp() {
     this.platform.ready().then(() => {

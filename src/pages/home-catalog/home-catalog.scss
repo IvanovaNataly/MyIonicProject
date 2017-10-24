@@ -1,0 +1,40 @@
+page-home-catalog {
+    .page-title {
+        text-align: center;
+    }
+
+    ion-slides {
+        height: 42%;
+    }
+
+    .card-container {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: flex-start;
+    }
+
+    ion-card {
+        text-align: center;
+        height: 100px;
+        padding: 15px;
+        flex-basis: 43%;
+
+        ion-icon {
+            font-size: 2em;
+            height: 30%;
+        }
+
+        .categoty-title {
+            padding-top: 8px;
+        }
+
+    }
+
+    .card-ios {
+        font-size: 1.1em;
+    }
+
+    .card-ios + ion-card {
+        margin-top: 12px;
+    }
+}

@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Catalog</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-slides pager>
+        <ion-slide *ngFor="let picture of pictures" [style.backgroundImage]="'url('+picture+')'"></ion-slide>
+    </ion-slides>
+
+    <h1 class="page-title">{{ title }}</h1>
+
+    <div class="card-container">
+        <ion-card *ngFor="let category of categories">
+            <ion-icon [name]="category.icon"></ion-icon>
+            <div class="category-title">{{category.title}}</div>
+        </ion-card>
+    </div>
+
+</ion-content>

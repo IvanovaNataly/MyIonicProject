@@ -10,7 +10,7 @@ import { FriendsListPage } from '../pages/friends-list/friends-list';
 import { FriendsDetailsPage } from '../pages/friends-details/friends-details';
 import { FriendsPostsPage } from '../pages/friends-posts/friends-posts';
 import { TabsPage } from '../pages/tabs/tabs';
-import { HomeCatalogPage } from '../pages/home-catalog/home-catalog';
+// import { HomeCatalogPage } from '../pages/home-catalog/home-catalog';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -24,8 +24,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
         FriendsListPage,
         FriendsDetailsPage,
         FriendsPostsPage,
-        TabsPage,
-        HomeCatalogPage
+        TabsPage
+        // ,
+        // HomeCatalogPage
     ],
     imports: [
         BrowserModule,
@@ -40,8 +41,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
         FriendsListPage,
         FriendsDetailsPage,
         FriendsPostsPage,
-        TabsPage,
-        HomeCatalogPage
+        TabsPage
+        // ,
+        // HomeCatalogPage
     ],
     providers: [
         StatusBar,

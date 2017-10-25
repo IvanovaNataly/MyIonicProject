@@ -9,5 +9,8 @@ import { HomeCatalogPage } from './home-catalog';
     imports: [
         IonicPageModule.forChild(HomeCatalogPage),
     ],
+    exports: [
+        HomeCatalogPage
+    ]
 })
 export class HomeCatalogPageModule {}

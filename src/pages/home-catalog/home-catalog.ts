@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { CategoryPage } from "../category/category";
 
 @Component({
     selector: 'page-home-catalog',
@@ -30,6 +31,12 @@ export class HomeCatalogPage {
 
     ionViewDidLoad() {
     console.log('ionViewDidLoad HomeCatalogPage');
+    }
+
+    categoryTapped(item) {
+        this.navCtrl.push('CategoryPage', {
+            item: item
+        });
     }
 
 }

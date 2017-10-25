@@ -5,14 +5,14 @@ import { HeroComponent } from '../../components/hero/hero';
 
 @NgModule({
     declarations: [
-        CategoryPage
+        CategoryPage,
+        HeroComponent
     ],
     imports: [
         IonicPageModule.forChild(CategoryPage)
+    ],
+    exports: [
+        CategoryPage
     ]
-    // ,
-    // exports: [
-    //     CategoryPage
-    // ]
 })
 export class CategoryPageModule {}

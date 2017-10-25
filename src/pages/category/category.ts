@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-// import { HeroPictureComponent } from '../../components/hero-picture/hero-picture';
 
 @IonicPage()
 @Component({
   selector: 'page-category',
-  templateUrl: 'category.html',
+  templateUrl: 'category.html'
 })
 export class CategoryPage {
 

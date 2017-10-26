@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { CategoryPage } from "../category/category";
 
 @IonicPage()
 @Component({
-    selector: 'page-home-catalog',
-    templateUrl: 'home-catalog.html',
+  selector: 'page-catalog',
+  templateUrl: 'catalog.html',
 })
-export class HomeCatalogPage {
+export class CatalogPage {
     title: string = "Home Decoration";
     categories: Array<{title: string, icon: string}>;
     pictures: Array<string>;
@@ -31,7 +30,7 @@ export class HomeCatalogPage {
     }
 
     ionViewDidLoad() {
-    console.log('ionViewDidLoad HomeCatalogPage');
+        console.log('ionViewDidLoad CatalogPage');
     }
 
     categoryTapped(item) {

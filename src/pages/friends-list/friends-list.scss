@@ -16,15 +16,18 @@ page-friends-list {
         border: none;
         border-radius: 8px;
 
-    }
-
-    .list {
-        & > .item-block:first-child {
-            border-top: none;
+        ion-avatar {
+            margin: 5px 16px 4px 0;
         }
-        & > .item-block:last-child,
-        .item-block .item-inner {
+    }
+    .list {
+        .item-wrapper:last-child .item-block {
             border-bottom: none;
+        }
+        button {
+            height: 2.8em;
+            min-height: unset;
+            border-radius: 8px;
         }
     }
 }
@@ -52,5 +55,4 @@ page-friends-list {
     padding-left: 30px;
     background-color: #ebebeb;
     border-radius: 8px;
-
 }

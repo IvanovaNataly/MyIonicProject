@@ -17,8 +17,7 @@ import { FriendsListPage } from "../pages/friends-list/friends-list";
 export class MyApp {
     @ViewChild(Nav) nav: Nav;
 
-    // make HelloIonicPage the root (or first) page
-    rootPage = TabsPage;
+    rootPage = FriendsListPage;
     // pages: Array<{title: string, component: any}>;
     pages: {};
     objectKeys = Object.keys;

@@ -12,8 +12,6 @@ import FriendModel from '../../models/friendModel';
 })
 export class FriendsListPage {
     items:FriendModel[];
-    // tab1: any;
-    // tab2: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
       this.items = [
@@ -23,20 +21,16 @@ export class FriendsListPage {
           new FriendModel('Some friend', './assets/imgs/avatar_green.jpg', "May 12, 1984"),
           new FriendModel('Some friend', './assets/imgs/avatar_green.jpg', "May 12, 1984"),
           new FriendModel('Someone I don\'t really know who', './assets/imgs/avatar_green.jpg', "June 28, 1990")
-          // { name: 'Best friend',
-          //   avatar: './assets/imgs/avatar_green.jpg'},
-          // { name: 'Some friend',
-          //     avatar: './assets/imgs/avatar_green.jpg'},
-          // { name: 'Someone I don\'t really know who',
-          //     avatar: './assets/imgs/avatar_green.jpg'}
       ]
-      // this.tab1 = FriendsPostsPage;
-      // this.tab2 = HelloIonicPage;
   }
 
   friendTapped(event, item) {
       this.navCtrl.push(FriendsDetailsPage, {
           item: item
       });
+  }
+
+  handleOverslide(item) {
+      console.log(item);
   }
 }

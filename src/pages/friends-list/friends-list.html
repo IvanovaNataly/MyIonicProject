@@ -22,8 +22,8 @@
         <!--</ion-list>-->
 
         <ion-list no-lines>
-            <ion-item-sliding *ngFor="let item of items" (click)="friendTapped($event, item)" (overslide)="handleOverslide(item)" overslide> //handleOverslide has no real functionality in it, just console.log
-                <ion-item >
+            <ion-item-sliding *ngFor="let item of items" (overslide)="handleOverslide(item)" overslide> //handleOverslide has no real functionality in it, just console.log
+                <ion-item (click)="friendTapped($event, item)">
                     <ion-avatar item-start>
                         <img [src]="item.avatar">
                     </ion-avatar>
@@ -31,14 +31,15 @@
                     {{item.name}}
                 </ion-item>
 
-                <ion-item-options side="left">
-                    <button ion-button round (click)="favorite(item)">Up</button>
-                    <button ion-button round color="danger" (click)="share(item)">Down</button>
+                <ion-item-options side="right" >
+                    <button *ngFor="let option of itemOptions" ion-button round [color]="option.color" (click)="printName(item)">{{option.text}}</button>
+                    <!--<button ion-button round color="default" (click)="printName(item)">Up</button>-->
+                    <!--<button ion-button round color="danger" (click)="printName(item)">Down</button>-->
                 </ion-item-options>
 
-                <ion-item-options side="right">
-                    <button ion-button round color="secondary" (click)="unread(item)">Message</button>
-                </ion-item-options>
+                <!--<ion-item-options side="right">-->
+                    <!--<button ion-button round color="secondary" (click)="unread(item)">Message</button>-->
+                <!--</ion-item-options>-->
 
             </ion-item-sliding>
         </ion-list>

@@ -13,6 +13,8 @@ import FriendModel from '../../models/friendModel';
 export class FriendsListPage {
     items:FriendModel[];
 
+    itemOptions: Array<{text: string, color: string, callback: string}>;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
       this.items = [
           new FriendModel('Best friend', './assets/imgs/avatar_green.jpg', "November 5, 1955"),
@@ -21,6 +23,19 @@ export class FriendsListPage {
           new FriendModel('Some friend', './assets/imgs/avatar_green.jpg', "May 12, 1984"),
           new FriendModel('Some friend', './assets/imgs/avatar_green.jpg', "May 12, 1984"),
           new FriendModel('Someone I don\'t really know who', './assets/imgs/avatar_green.jpg', "June 28, 1990")
+      ]
+
+      this.itemOptions = [
+          {
+              text: "Up",
+              color: "default",
+              callback: "printName(item)"
+          },
+          {
+              text: "Down",
+              color: "danger",
+              callback: "(click)='printName(item)'"
+          }
       ]
   }
 
@@ -32,5 +47,9 @@ export class FriendsListPage {
 
   handleOverslide(item) {
       console.log(item);
+  }
+
+  printName(item) {
+      console.log(item.name);
   }
 }

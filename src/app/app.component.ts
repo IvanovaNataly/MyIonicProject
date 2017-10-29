@@ -8,7 +8,6 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { FriendsListPage } from "../pages/friends-list/friends-list";
 
 
 @Component({
@@ -17,7 +16,7 @@ import { FriendsListPage } from "../pages/friends-list/friends-list";
 export class MyApp {
     @ViewChild(Nav) nav: Nav;
 
-    rootPage = FriendsListPage;
+    rootPage = HelloIonicPage;
     // pages: Array<{title: string, component: any}>;
     pages: {};
     objectKeys = Object.keys;
@@ -39,12 +38,12 @@ export class MyApp {
                 Catalog: [
                     { title: 'Carpets & Rugs', component: HelloIonicPage },
                     { title: 'Decorative Accessories', component: ListPage },
-                    { title: 'Lighting', component: FriendsListPage},
+                    { title: 'Lighting', component: 'FriendsListPage'},
                     { title: 'Pillows', component: HelloIonicPage }
                 ],
 
                 Social: [
-                    { title: 'Friends List', component: FriendsListPage},
+                    { title: 'Friends List', component: 'FriendsListPage'},
                 ]
             };
 

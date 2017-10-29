@@ -1,24 +1,24 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-        <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Friends List</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Friends List</ion-title>
+    </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
     <div class="friends-list-container">
         <!--<ion-list>-->
-            <!--<button ion-item *ngFor="let item of items" (click)="friendTapped($event, item)">-->
-                <!--<ion-avatar item-start>-->
-                    <!--<img [src]="item.avatar">-->
-                <!--</ion-avatar>-->
+        <!--<button ion-item *ngFor="let item of items" (click)="friendTapped($event, item)">-->
+        <!--<ion-avatar item-start>-->
+        <!--<img [src]="item.avatar">-->
+        <!--</ion-avatar>-->
 
-                <!--{{item.name}}-->
+        <!--{{item.name}}-->
 
-            <!--</button>-->
+        <!--</button>-->
         <!--</ion-list>-->
 
         <ion-list no-lines>
@@ -32,13 +32,14 @@
                 </ion-item>
 
                 <ion-item-options side="right" >
+                    <!--<item-options itemOptions"></item-options>-->
                     <button *ngFor="let option of itemOptions" ion-button round [color]="option.color" (click)="printName(item)">{{option.text}}</button>
                     <!--<button ion-button round color="default" (click)="printName(item)">Up</button>-->
                     <!--<button ion-button round color="danger" (click)="printName(item)">Down</button>-->
                 </ion-item-options>
 
                 <!--<ion-item-options side="right">-->
-                    <!--<button ion-button round color="secondary" (click)="unread(item)">Message</button>-->
+                <!--<button ion-button round color="secondary" (click)="unread(item)">Message</button>-->
                 <!--</ion-item-options>-->
 
             </ion-item-sliding>
@@ -51,5 +52,5 @@
             <p class="profile-name">Some user</p>
         </div>
     </div>
-<!-- some  -->
+    <!-- some  -->
 </ion-content>

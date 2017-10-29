@@ -6,7 +6,6 @@ import { MyApp } from './app.component';
 import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
-import { FriendsListPage } from '../pages/friends-list/friends-list';
 import { FriendsDetailsPage } from '../pages/friends-details/friends-details';
 import { FriendsPostsPage } from '../pages/friends-posts/friends-posts';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -22,7 +21,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
         HelloIonicPage,
         ItemDetailsPage,
         ListPage,
-        FriendsListPage,
         FriendsDetailsPage,
         FriendsPostsPage,
         TabsPage,
@@ -38,7 +36,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
         HelloIonicPage,
         ItemDetailsPage,
         ListPage,
-        FriendsListPage,
         FriendsDetailsPage,
         FriendsPostsPage,
         TabsPage

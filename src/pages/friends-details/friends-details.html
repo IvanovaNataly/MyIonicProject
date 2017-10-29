@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>friends-details</ion-title>
+    <ion-title>Friends Details</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -23,7 +23,8 @@
             <p>{{ selectedFriend.birthday }}</p>
         </ion-item>
 
-        <img src="http://lorempixel.com/400/200/nature" class="image">
+        <!--<img src="http://lorempixel.com/400/200/nature" class="image">-->
+        <img [src]="img" class="image">
 
         <ion-card-content class="content">
             <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>

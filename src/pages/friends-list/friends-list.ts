@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { FriendsDetailsPage } from '../friends-details/friends-details';
+// import { FriendsDetailsPage } from '../friends-details/friends-details';
 import FriendModel from '../../models/friendModel';
 import ItemOptionModel from '../../models/itemOptionModel';
 
@@ -35,7 +35,7 @@ export class FriendsListPage {
     }
 
     friendTapped(event, item) {
-        this.navCtrl.push(FriendsDetailsPage, {
+        this.navCtrl.push('FriendsDetailsPage', {
             item: item
         });
     }

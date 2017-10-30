@@ -1,18 +1,24 @@
-import { Directive } from '@angular/core';
+import {Directive, ElementRef, Input, OnInit} from '@angular/core';
 
-/**
- * Generated class for the LazyLoadDirective directive.
- *
- * See https://angular.io/api/core/Directive for more info on Angular
- * Directives.
- */
 @Directive({
-  selector: '[lazy-load]' // Attribute selector
+    selector: '[lazy-load]'
 })
-export class LazyLoadDirective {
 
-  constructor() {
-    console.log('Hello LazyLoadDirective Directive');
-  }
+export class LazyLoadDirective implements OnInit {
+    @Input()
+    lazyLoad: string;
 
+    constructor(private elementRef: ElementRef){
+        // console.log(elementRef.nativeElement);
+    };
+
+    ngOnInit() {
+        let image = document.createElement('img');
+        image.src = this.lazyLoad;
+        image.addEventListener('load', event => {
+            setTimeout(() => {
+                this.elementRef.nativeElement.src = image.src;
+            }, 2000);
+        });
+    }
 }

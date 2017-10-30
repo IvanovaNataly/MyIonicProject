@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import FriendModel from '../../models/friendModel';
+
+@IonicPage()
 @Component({
     selector: 'page-friends-details',
     templateUrl: 'friends-details.html',

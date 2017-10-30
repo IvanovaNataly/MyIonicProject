@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { FriendsListPage } from './friends-list';
 import { ItemOptionsModule } from '../../components/item-options/item-options.module';
+import { DirectivesModule } from '../../directives/directives.module';
 import { PipesModule } from '../../pipes/pipes.module';
 
 @NgModule({
@@ -10,6 +11,7 @@ import { PipesModule } from '../../pipes/pipes.module';
     ],
     imports: [
         ItemOptionsModule,
+        DirectivesModule,
         PipesModule,
         IonicPageModule.forChild(FriendsListPage)
     ],

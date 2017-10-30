@@ -14,12 +14,11 @@ export class OverslideDirective {
     triggered: boolean = false;
 
     constructor(public element: ElementRef, public renderer: Renderer) {
-        console.log('Hello OverslideDirective Directive');
+        // console.log('Hello OverslideDirective Directive');
     }
 
     handleDrag(e) {
-        console.log("overslide");
-        if(Math.abs(e.getSlidingPercent()) > 1.97 && !this.triggered){
+        if(Math.abs(e.getSlidingPercent()) > 1.5 && !this.triggered){
 
             this.triggered = true;
 
@@ -30,8 +29,6 @@ export class OverslideDirective {
                 this.renderer.setElementStyle(this.element.nativeElement, 'display', 'none');
                 this.overslide.emit(true);
             }, 300);
-
         }
     }
-
 }

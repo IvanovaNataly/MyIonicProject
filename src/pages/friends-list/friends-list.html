@@ -11,7 +11,8 @@
 <ion-content padding>
     <div class="friends-list-container">
         <ion-list no-lines>
-            <ion-item-sliding *ngFor="let item of items" (overslide)="handleOverslide(item)" overslide> //handleOverslide has no real functionality in it, just console.log
+            <ion-item-sliding *ngFor="let item of items" overslide (overslide)="handleOverslide(item)" (ionDrag)="logDrag($event)">
+                //handleOverslide has no real functionality in it, just console.log
                 <ion-item (click)="friendTapped($event, item)">
                     <ion-avatar item-start>
                         <img [src]="item.avatar">
@@ -22,7 +23,7 @@
 
                 <ion-item-options side="left" >
                     <item-option *ngFor="let option of itemOptions | optionSide : side" [option]="option"></item-option>
-                    <!--<button *ngFor="let option of itemOptions">{{ option.text}}</button>-->
+                    <!--<button> "text" </button>-->
                 </ion-item-options>
 
                 <ion-item-options side="right">

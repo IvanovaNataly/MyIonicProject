@@ -10,10 +10,6 @@ export class ItemOptionsComponent {
     @Input()
     option: ItemOptionModel;
 
-    constructor() {
-      console.log('ItemOptionsComponent');
-    }
-
     printName(item) {
         console.log(item.text);
     }

@@ -14,6 +14,9 @@ export class FriendsListPage {
 
     itemOptions: ItemOptionModel[];
 
+    side: string = "left";
+    sideR: string = "right";
+
     constructor(public navCtrl: NavController, public navParams: NavParams) {
         this.items = [
             new FriendModel('Best friend', './assets/imgs/avatar_green.jpg', "November 5, 1955"),
@@ -25,8 +28,9 @@ export class FriendsListPage {
         ];
 
         this.itemOptions= [
-            new ItemOptionModel('Up', 'default', 'printName(item)'),
-            new ItemOptionModel('Down', 'danger', 'printName(item)')
+            new ItemOptionModel('Up', 'default', 'printName(item)', "left"),
+            new ItemOptionModel('Down', 'danger', 'printName(item)', "left"),
+            new ItemOptionModel('Message', 'secondary', 'printName(item)', "right")
         ]
     }
 

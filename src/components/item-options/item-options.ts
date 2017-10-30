@@ -1,16 +1,20 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'item-options',
+  selector: 'item-option',
   templateUrl: 'item-options.html'
 })
 export class ItemOptionsComponent {
 
     @Input()
-    itemOptions: Array<{text: string, color: string, callback: string}>;
+    option: {text: string, color: string, callback: string};
 
-  constructor() {
-    console.log('Hello ItemOptionsComponent Component');
-  }
+    constructor() {
+      console.log('ItemOptionsComponent', this.option);
+    }
+
+    printName(item) {
+        console.log(item.text);
+    }
 
 }

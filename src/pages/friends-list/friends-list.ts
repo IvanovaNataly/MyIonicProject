@@ -49,7 +49,4 @@ export class FriendsListPage {
         console.log(item);
     }
 
-    printName(item) {
-        console.log(item.name);
-    }
 }

@@ -20,7 +20,6 @@
 
         <!--</button>-->
         <!--</ion-list>-->
-
         <ion-list no-lines>
             <ion-item-sliding *ngFor="let item of items" (overslide)="handleOverslide(item)" overslide> //handleOverslide has no real functionality in it, just console.log
                 <ion-item (click)="friendTapped($event, item)">
@@ -32,8 +31,9 @@
                 </ion-item>
 
                 <ion-item-options side="right" >
-                    <!--<item-options itemOptions"></item-options>-->
-                    <button *ngFor="let option of itemOptions" ion-button round [color]="option.color" (click)="printName(item)">{{option.text}}</button>
+                    <item-option *ngFor="let option of itemOptions" [option]="option"></item-option>
+                    <!--<button *ngFor="let option of itemOptions">{{option.text}}</button>-->
+
                     <!--<button ion-button round color="default" (click)="printName(item)">Up</button>-->
                     <!--<button ion-button round color="danger" (click)="printName(item)">Down</button>-->
                 </ion-item-options>

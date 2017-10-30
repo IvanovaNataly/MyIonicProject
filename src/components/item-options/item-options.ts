@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-// import ItemOptionModel from '../../models/itemOptionModel';
+import ItemOptionModel from '../../models/itemOptionModel';
 
 @Component({
   selector: 'item-option',
@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
 export class ItemOptionsComponent {
 
     @Input()
-    option: {text: string, color: string, callback: string};
+    option: ItemOptionModel;
 
     constructor() {
       console.log('ItemOptionsComponent');
@@ -17,5 +17,4 @@ export class ItemOptionsComponent {
     printName(item) {
         console.log(item.text);
     }
-
 }

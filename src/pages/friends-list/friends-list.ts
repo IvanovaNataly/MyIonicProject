@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FriendsDetailsPage } from '../friends-details/friends-details';
 import FriendModel from '../../models/friendModel';
-// import ItemOptionModel from '../../models/itemOptionModel';
+import ItemOptionModel from '../../models/itemOptionModel';
 
 @IonicPage()
 @Component({
@@ -12,9 +12,7 @@ import FriendModel from '../../models/friendModel';
 export class FriendsListPage {
     items:FriendModel[];
 
-    // itemOptions: ItemOptionModel[];
-
-    itemOptions: [{text: string, color: string, callback: string}];
+    itemOptions: ItemOptionModel[];
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {
         this.items = [
@@ -26,21 +24,9 @@ export class FriendsListPage {
             new FriendModel('Someone I don\'t really know who', './assets/imgs/avatar_green.jpg', "June 28, 1990")
         ];
 
-        // this.itemOptions= [
-        //     new ItemOptionModel('Up', 'default', 'printName(item)'),
-        //     new ItemOptionModel('Down', 'danger', 'printName(item)')
-        // ]
         this.itemOptions= [
-            {
-                text: "Up",
-                color: "default",
-                callback: "printName(item)"
-            },
-            {
-                text: "Down",
-                color: "danger",
-                callback: "(click)='printName(item)'"
-            }
+            new ItemOptionModel('Up', 'default', 'printName(item)'),
+            new ItemOptionModel('Down', 'danger', 'printName(item)')
         ]
     }
 

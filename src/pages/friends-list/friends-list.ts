@@ -45,7 +45,7 @@ export class FriendsListPage {
     }
 
     logDrag(event) {
-        // console.log(event);
+        console.log(event);
     }
 
 }

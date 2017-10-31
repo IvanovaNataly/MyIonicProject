@@ -56,3 +56,69 @@ page-friends-list {
     background-color: #ebebeb;
     border-radius: 8px;
 }
+
+
+//Icon sliding
+
+.friends-list-container {
+    margin-left: 20px;
+}
+
+.main-item .label {
+    line-height: 48px;
+    height: calc(100% - 22px);
+}
+
+.icon-sliding {
+    width: 20px;
+    height: 38%;
+    overflow: visible;
+    transition: all 0.5s linear;
+    box-sizing: border-box;
+    position: absolute;
+    float: left;
+    //background-image: url('../../assets/icon/paw.png');
+    //background-size: 20px;
+    //background-repeat: no-repeat;
+    //background-position-x: 95%;
+    .item-ios {
+        padding: 0;
+        margin: 0;
+        background-color: transparent;
+        .item-inner {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+    .label-ios {
+        margin: 0;
+        align-self: baseline;
+        position: relative;
+    }
+    .ion-ios-paw {
+        display: none;
+        position: absolute;
+        right: 0;
+        bottom: -17%;
+    }
+}
+
+.list-ios ion-item-sliding {
+    background-color: transparent;
+}
+
+.cross-out {
+    width: calc(100% - 20px - 20px);
+    border-bottom: 1px solid black;
+    .ion-ios-paw {
+        display: inline-block;
+    }
+}
+
+.item-ios .fixed-text {
+    display: inline;
+    height: 100%;
+    line-height: 100%;
+    margin: 0;
+}
+

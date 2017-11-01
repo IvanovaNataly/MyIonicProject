@@ -11,41 +11,26 @@
 <ion-content padding>
     <div class="friends-list-container">
         <ion-list no-lines>
-            <!--<ion-item-sliding *ngFor="let item of items" overslide (overslide)="handleOverslide(item)" (ionDrag)="logDrag($event)">-->
-                <!--handleOverslide has no real functionality in it, just console.log-->
-                <!--<ion-item (click)="friendTapped($event, item)">-->
-                    <!--<ion-avatar item-start>-->
-                        <!--<img [src]="item.avatar">-->
-                    <!--</ion-avatar>-->
+            <ion-item-sliding *ngFor="let item of items" overslide (overslide)="handleOverslide(item)" (ionDrag)="logDrag($event)">
+                //handleOverslide has no real functionality in it, just console.log
 
-                    <!--{{item.name}}-->
-                <!--</ion-item>-->
+                <ion-item (click)="friendTapped($event, item)">
+                    <ion-avatar item-start>
+                        <img [src]="item.avatar">
+                    </ion-avatar>
 
-                <!--<ion-item-options side="left" >-->
-                    <!--<item-option *ngFor="let option of itemOptions | optionSide : side" [option]="option"></item-option>-->
-                    <!--&lt;!&ndash;<button> "text" </button>&ndash;&gt;-->
-                <!--</ion-item-options>-->
+                    {{item.name}}
+                </ion-item>
 
-                <!--<ion-item-options side="right">-->
-                    <!--<item-option *ngFor="let option of itemOptions | optionSide : sideR" [option]="option"></item-option>-->
-                <!--</ion-item-options>-->
+                <ion-item-options side="left" >
+                    <item-option *ngFor="let option of itemOptions | optionSide : side" [option]="option"></item-option>
+                </ion-item-options>
 
-            <!--</ion-item-sliding>-->
+                <ion-item-options side="right">
+                    <item-option *ngFor="let option of itemOptions | optionSide : sideR" [option]="option"></item-option>
+                </ion-item-options>
 
-            <ion-item *ngFor="let item of items" class="main-item" overslide (overslide)="handleOverslide(item)" >
-
-                <ion-item-sliding overslide (overslide)="handleOverslide(item)" class="icon-sliding">
-                    <ion-item class="icon-item">
-
-                        <ion-icon name="paw"></ion-icon>
-                    </ion-item>
-                    <ion-item-options side="left"></ion-item-options>
-                </ion-item-sliding>
-
-                <h2 class="fixed-text">{{item.name}}</h2>
-
-            </ion-item>
-
+            </ion-item-sliding>
         </ion-list>
 
         <div class="profile">
@@ -55,5 +40,4 @@
             <p class="profile-name">Some user</p>
         </div>
     </div>
-    <!-- some  -->
 </ion-content>

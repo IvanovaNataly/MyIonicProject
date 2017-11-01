@@ -16,7 +16,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 export class MyApp {
     @ViewChild(Nav) nav: Nav;
 
-    rootPage = ListPage;
+    rootPage = 'FriendsListPage';
     // pages: Array<{title: string, component: any}>;
     pages: {};
     objectKeys = Object.keys;
@@ -40,6 +40,10 @@ export class MyApp {
                     { title: 'Decorative Accessories', component: ListPage },
                     { title: 'Lighting', component: 'FriendsListPage'},
                     { title: 'Pillows', component: HelloIonicPage }
+                ],
+
+                Basket: [
+                    { title: 'Wish List', component: 'GoodsListPage'},
                 ],
 
                 Social: [

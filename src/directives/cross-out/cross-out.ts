@@ -1,15 +1,15 @@
 import { Directive, Output, ElementRef, Renderer, EventEmitter } from '@angular/core';
 
 @Directive({
-    selector: '[overslide]', // Attribute selector
+    selector: '[cross-out]',
     host: {
         '(ionDrag)': 'handleDrag($event)'
     }
 })
-export class OverslideDirective {
+export class CrossOutDirective {
 
     @Output()
-    overslide: any = new EventEmitter();
+    crossOut: any = new EventEmitter();
 
     triggered: boolean = false;
 
@@ -17,18 +17,17 @@ export class OverslideDirective {
     }
 
     handleDrag(e) {
-        // console.log("overslide");
+        // console.log(this.element.nativeElement.children);
         if(Math.abs(e.getSlidingPercent()) > 1.7 && !this.triggered){
 
             this.triggered = true;
-
-            this.renderer.setElementStyle(this.element.nativeElement, 'transition', '0.3s linear');
-            this.renderer.setElementStyle(this.element.nativeElement, 'opacity', '0');
+            let el = this.element.nativeElement;
+            this.renderer.setElementClass(el, 'cross-out', true);
 
             setTimeout(() => {
-                this.renderer.setElementStyle(this.element.nativeElement, 'display', 'none');
-                this.overslide.emit(true);
+                this.crossOut.emit(true);
             }, 300);
         }
     }
 }
+

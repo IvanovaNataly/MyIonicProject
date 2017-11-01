@@ -1,124 +1,58 @@
 page-friends-list {
+    .friends-list-container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
-}
-
-.friends-list-container {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    .item-ios {
-        padding-right: 20px;
-        padding-left: 20px;
-        margin-bottom: 12px;
-        background-color: #ebebeb;
-        border: none;
-        border-radius: 8px;
-
-        ion-avatar {
-            margin: 5px 16px 4px 0;
-        }
-    }
-    .list {
-        .item-wrapper:last-child .item-block {
-            border-bottom: none;
-        }
-        button {
-            height: 2.8em;
-            min-height: unset;
+        .item-ios {
+            padding-right: 20px;
+            padding-left: 20px;
+            margin-bottom: 12px;
+            background-color: #ebebeb;
+            border: none;
             border-radius: 8px;
+
+            ion-avatar {
+                margin: 5px 16px 4px 0;
+            }
+        }
+        .list {
+            .item-wrapper:last-child .item-block {
+                border-bottom: none;
+            }
+            button {
+                height: 2.8em;
+                min-height: unset;
+                border-radius: 8px;
+            }
         }
     }
-}
 
-.profile {
-    text-align: center;
-    margin-bottom: 0;
-}
-
-.profile-img {
-    width: 100px;
-    height: 100px;
-    border: 4px #cccdce solid;
-    border-radius: 50%;
-    margin-bottom: 10px;
-}
-
-.profile-name {
-    font-size: 1.7rem;
-    color: #000;
-    display: inline-block;
-    height: 40px;
-    line-height: 40px;
-    padding-right: 30px;
-    padding-left: 30px;
-    background-color: #ebebeb;
-    border-radius: 8px;
-}
-
-
-//Icon sliding
-
-.friends-list-container {
-    margin-left: 20px;
-}
-
-.main-item .label {
-    line-height: 48px;
-    height: calc(100% - 22px);
-}
-
-.icon-sliding {
-    width: 20px;
-    height: 38%;
-    overflow: visible;
-    transition: all 0.5s linear;
-    box-sizing: border-box;
-    position: absolute;
-    float: left;
-    //background-image: url('../../assets/icon/paw.png');
-    //background-size: 20px;
-    //background-repeat: no-repeat;
-    //background-position-x: 95%;
-    .item-ios {
-        padding: 0;
-        margin: 0;
-        background-color: transparent;
-        .item-inner {
-            padding-right: 0;
-            padding-left: 0;
-        }
+    .profile {
+        text-align: center;
+        margin-bottom: 0;
     }
-    .label-ios {
-        margin: 0;
-        align-self: baseline;
-        position: relative;
-    }
-    .ion-ios-paw {
-        display: none;
-        position: absolute;
-        right: 0;
-        bottom: -17%;
-    }
-}
 
-.list-ios ion-item-sliding {
-    background-color: transparent;
-}
+    .profile-img {
+        width: 100px;
+        height: 100px;
+        border: 4px #cccdce solid;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
 
-.cross-out {
-    width: calc(100% - 20px - 20px);
-    border-bottom: 1px solid black;
-    .ion-ios-paw {
+    .profile-name {
+        font-size: 1.7rem;
+        color: #000;
         display: inline-block;
+        height: 40px;
+        line-height: 40px;
+        padding-right: 30px;
+        padding-left: 30px;
+        background-color: #ebebeb;
+        border-radius: 8px;
     }
-}
 
-.item-ios .fixed-text {
-    display: inline;
-    height: 100%;
-    line-height: 100%;
-    margin: 0;
 }
 

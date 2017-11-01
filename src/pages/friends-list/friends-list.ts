@@ -41,11 +41,11 @@ export class FriendsListPage {
     }
 
     handleOverslide(item) {
-        console.log(item);
+        // console.log(item);
     }
 
     logDrag(event) {
-        console.log(event);
+        // console.log(event);
     }
 
 }

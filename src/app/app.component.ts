@@ -16,7 +16,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 export class MyApp {
     @ViewChild(Nav) nav: Nav;
 
-    rootPage = 'FriendsListPage';
+    rootPage = 'TodoListPage';
     // pages: Array<{title: string, component: any}>;
     pages: {};
     objectKeys = Object.keys;
@@ -48,6 +48,7 @@ export class MyApp {
 
                 Social: [
                     { title: 'Friends List', component: 'FriendsListPage'},
+                    { title: 'Todo List', component: 'TodoListPage'}
                 ]
             };
 

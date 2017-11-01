@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-// import { FriendsDetailsPage } from '../friends-details/friends-details';
 import FriendModel from '../../models/friendModel';
 import ItemOptionModel from '../../models/itemOptionModel';
 

@@ -1,3 +1,13 @@
 page-todo-list {
+    .secondary {
+        background-color: cornflowerblue;
+    }
 
+    .third {
+        background-color: lighten(cornflowerblue, 20%);
+    }
+
+    .forth {
+        background-color: lighten(cornflowerblue, 30%);
+    }
 }

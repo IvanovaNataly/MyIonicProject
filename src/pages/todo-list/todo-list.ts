@@ -8,6 +8,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TodoListPage {
     items: {};
+    arrayOfKeys: any[];
+    isValid: boolean = false;
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {
         this.items = {
@@ -43,10 +45,16 @@ export class TodoListPage {
                 }
             }
         };
+
+
+    }
+
+    isString(value) {
+        return typeof(value) === "string";
     }
 
     ionViewDidLoad() {
-    console.log('ionViewDidLoad TodoListPage');
+        // console.log(this.arrayOfKeys);
     }
 
 }

@@ -1,0 +1,58 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Todo List</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+        <ng-container *ngFor="let item of items | keys">
+            <ng-container *ngFor="let secondary of item.value | keys">
+
+                <ng-container *ngIf="isString(secondary.value); then stringProperty else objectProperty"></ng-container>
+
+                <ng-template #stringProperty>
+                    <ion-item class="secondary">
+                        {{ secondary.value }}
+                    </ion-item>
+                </ng-template>
+
+                <ng-template #objectProperty>
+                    <ng-container *ngFor="let third of secondary.value | keys">
+                        <ng-container *ngIf="isString(third.value); then stringPropertyThird else objectPropertyThird"></ng-container>
+
+                        <ng-template #stringPropertyThird>
+                            <ion-item class="third" >
+                                {{ third.value }}
+                            </ion-item>
+                        </ng-template>
+
+                        <ng-template #objectPropertyThird>
+                            <ng-container *ngFor="let forth of third.value | keys">
+                                <ng-container *ngIf="isString(forth.value); then stringProperty4 else objectProperty4"></ng-container>
+
+                                <ng-template #stringProperty4>
+                                    <ion-item class="forth">
+                                        {{ forth.value }}
+                                    </ion-item>
+                                </ng-template>
+
+                                <ng-template #objectProperty4>
+                                    <ion-item>
+                                        object
+                                    </ion-item>
+                                </ng-template>
+
+                            </ng-container>
+                        </ng-template>
+
+                    </ng-container>
+                </ng-template>
+            </ng-container>
+        </ng-container>
+    </ion-list>
+</ion-content>

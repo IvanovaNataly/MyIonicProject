@@ -11,18 +11,18 @@
 <ion-content padding>
     <ion-list>
         <ng-container *ngFor="let item of items | keys">
-            <ng-container *ngFor="let secondary of item.value | keys">
+            <ng-container *ngFor="let second of item.value | keys">
 
-                <ng-container *ngIf="isString(secondary.value); then stringProperty else objectProperty"></ng-container>
+                <ng-container *ngIf="isString(second.value); then stringProperty else objectProperty"></ng-container>
 
                 <ng-template #stringProperty>
-                    <ion-item class="secondary">
-                        {{ secondary.value }}
+                    <ion-item class="second">
+                        {{ second.value }}
                     </ion-item>
                 </ng-template>
 
                 <ng-template #objectProperty>
-                    <ng-container *ngFor="let third of secondary.value | keys">
+                    <ng-container *ngFor="let third of second.value | keys">
                         <ng-container *ngIf="isString(third.value); then stringPropertyThird else objectPropertyThird"></ng-container>
 
                         <ng-template #stringPropertyThird>

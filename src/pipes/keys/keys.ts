@@ -9,7 +9,10 @@ export class KeysPipe implements PipeTransform {
         let keys = [];
         for (let key in value) {
             if (key !== "status")
-                keys.push({key: key, value: value[key]});
+            {
+                if (key !== "snoozed_until")
+                    keys.push({key: key, value: value[key]});
+            }
         }
 
         let newKeys = this.sortKeys(keys);

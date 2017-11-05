@@ -1,4 +1,4 @@
-import { Directive, Output, ElementRef, Renderer, EventEmitter } from '@angular/core';
+import { Directive, Output, ElementRef, Renderer2, EventEmitter } from '@angular/core';
 
 @Directive({
     selector: '[cross-out]',
@@ -13,7 +13,7 @@ export class CrossOutDirective {
 
     triggered: boolean = false;
 
-    constructor(public element: ElementRef, public renderer: Renderer) {
+    constructor(public element: ElementRef, public renderer: Renderer2) {
     }
 
     handleDrag(e) {
@@ -22,7 +22,7 @@ export class CrossOutDirective {
 
             this.triggered = true;
             let el = this.element.nativeElement;
-            this.renderer.setElementClass(el, 'cross-out', true);
+            this.renderer.addClass(el, 'cross-out');
 
             setTimeout(() => {
                 this.crossOut.emit(true);

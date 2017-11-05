@@ -1,4 +1,4 @@
-import { Directive, Output, ElementRef, Renderer, EventEmitter } from '@angular/core';
+import { Directive, Output, ElementRef, Renderer2, EventEmitter } from '@angular/core';
 
 @Directive({
     selector: '[overslide]', // Attribute selector
@@ -13,7 +13,7 @@ export class OverslideDirective {
 
     triggered: boolean = false;
 
-    constructor(public element: ElementRef, public renderer: Renderer) {
+    constructor(public element: ElementRef, public renderer: Renderer2) {
     }
 
     handleDrag(e) {
@@ -22,11 +22,11 @@ export class OverslideDirective {
 
             this.triggered = true;
 
-            this.renderer.setElementStyle(this.element.nativeElement, 'transition', '0.3s linear');
-            this.renderer.setElementStyle(this.element.nativeElement, 'opacity', '0');
+            this.renderer.setStyle(this.element.nativeElement, 'transition', '0.3s linear');
+            this.renderer.setStyle(this.element.nativeElement, 'opacity', '0');
 
             setTimeout(() => {
-                this.renderer.setElementStyle(this.element.nativeElement, 'display', 'none');
+                this.renderer.setStyle(this.element.nativeElement, 'display', 'none');
                 this.overslide.emit(true);
             }, 300);
         }

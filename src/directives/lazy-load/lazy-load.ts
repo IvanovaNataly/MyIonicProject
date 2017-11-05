@@ -1,7 +1,7 @@
 import {Directive, ElementRef, Input, OnInit} from '@angular/core';
 
 @Directive({
-    selector: '[lazy-load]'
+    selector: '[lazyLoad]'
 })
 
 export class LazyLoadDirective implements OnInit {
@@ -9,7 +9,6 @@ export class LazyLoadDirective implements OnInit {
     lazyLoad: string;
 
     constructor(private elementRef: ElementRef){
-        // console.log(elementRef.nativeElement);
     };
 
     ngOnInit() {
@@ -17,7 +16,9 @@ export class LazyLoadDirective implements OnInit {
         image.src = this.lazyLoad;
         image.addEventListener('load', event => {
             setTimeout(() => {
+                this.elementRef.nativeElement.className = "image";
                 this.elementRef.nativeElement.src = image.src;
+                console.log(image);
             }, 2000);
         });
     }

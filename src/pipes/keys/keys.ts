@@ -16,7 +16,6 @@ export class KeysPipe implements PipeTransform {
         }
 
         let newKeys = this.sortKeys(keys);
-        console.log(newKeys);
         return newKeys;
     }
 

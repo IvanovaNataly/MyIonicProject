@@ -25,35 +25,19 @@
                     <ng-container *ngFor="let third of second.value | keys">
                         <ng-container *ngIf="isString(third.value); then stringPropertyThird else objectPropertyThird"></ng-container>
 
-                        <ng-template #stringPropertyThird>
-                            <ng-container >
-                                <ion-item class="third">
+                            <ng-template #stringPropertyThird>
+                                <ion-item class="third" >
                                     {{ third.value }}
                                 </ion-item>
-                            </ng-container>
+                            </ng-template>
 
-                        </ng-template>
-
-                        <ng-template #objectPropertyThird >
-                            <ng-container *ngIf="isSnoozed(third.value)">
-                                <ng-container *ngFor="let forth of third.value | keys">
-                                    <ng-container *ngIf="isString(forth.value); then stringProperty4 else objectProperty4"></ng-container>
-
-                                    <ng-template #stringProperty4>
-                                        <ion-item class="forth">
-                                            {{ forth.value }}
-                                        </ion-item>
-                                    </ng-template>
-
-                                    <ng-template #objectProperty4>
-                                        <ion-item>
-                                            object
-                                        </ion-item>
-                                    </ng-template>
-
+                            <ng-template #objectPropertyThird >
+                                <ng-container >
+                                    <ion-item class="forth" [ngClass]="{snoozed: third.value.snoozed_until}">
+                                        {{ third.value.title }}
+                                    </ion-item>
                                 </ng-container>
-                            </ng-container>
-                        </ng-template>
+                            </ng-template>
 
                     </ng-container>
                 </ng-template>

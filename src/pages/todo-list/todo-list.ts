@@ -8,6 +8,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TodoListPage {
     items: {};
+    filteredItems: any[];
     isValid: boolean = true;
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -43,15 +44,13 @@ export class TodoListPage {
                         title: 'Sum monthly results'
                 }
             }
-        };
+        }
     }
+
 
     isString(value) {
         return typeof(value) === "string";
     }
 
-    isSnoozed(value) {
-        return !value.hasOwnProperty("snoozed_until");
-    }
 
 }

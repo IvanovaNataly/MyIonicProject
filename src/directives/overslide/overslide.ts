@@ -17,7 +17,7 @@ export class OverslideDirective {
     }
 
     handleDrag(e) {
-        // console.log("overslide");
+        console.log("overslide");
         if(Math.abs(e.getSlidingPercent()) > 1.7 && !this.triggered){
 
             this.triggered = true;

@@ -7,7 +7,6 @@
     </ion-navbar>
 </ion-header>
 
-
 <ion-content padding>
     <ion-list>
         <ng-container *ngFor="let item of items | keys">
@@ -16,9 +15,17 @@
                 <ng-container *ngIf="isString(second.value); then stringProperty else objectProperty"></ng-container>
 
                 <ng-template #stringProperty>
-                    <ion-item class="second">
-                        {{ second.value }}
-                    </ion-item>
+                    <ion-item-sliding>
+                        <ion-item class="second">
+                            {{ second.value }}
+                        </ion-item>
+                        <ion-item-options side="right">
+                            <button ion-button color="primary">
+                                <ion-icon name="mail"></ion-icon>
+                                Email
+                            </button>
+                        </ion-item-options>
+                    </ion-item-sliding>
                 </ng-template>
 
                 <ng-template #objectProperty>
@@ -26,17 +33,31 @@
                         <ng-container *ngIf="isString(third.value); then stringPropertyThird else objectPropertyThird"></ng-container>
 
                             <ng-template #stringPropertyThird>
-                                <ion-item class="third" >
-                                    {{ third.value }}
-                                </ion-item>
+                                <ion-item-sliding>
+                                    <ion-item class="third" >
+                                        {{ third.value }}
+                                    </ion-item>
+                                    <ion-item-options side="right">
+                                        <button ion-button color="primary">
+                                            <ion-icon name="mail"></ion-icon>
+                                            Email
+                                        </button>
+                                    </ion-item-options>
+                                </ion-item-sliding>
                             </ng-template>
 
                             <ng-template #objectPropertyThird >
-                                <ng-container >
-                                    <ion-item class="forth" [ngClass]="{snoozed: third.value.snoozed_until}">
+                                <ion-item-sliding *ngIf="!third.value.snoozed_until">
+                                    <ion-item class="forth">
                                         {{ third.value.title }}
                                     </ion-item>
-                                </ng-container>
+                                    <ion-item-options side="right">
+                                        <button ion-button color="primary">
+                                            <ion-icon name="mail"></ion-icon>
+                                            Email
+                                        </button>
+                                    </ion-item-options>
+                                </ion-item-sliding>
                             </ng-template>
 
                     </ng-container>

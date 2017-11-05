@@ -1,5 +1,5 @@
 page-todo-list {
-    .secondary {
+    .second {
         background-color: cornflowerblue;
     }
 
@@ -9,5 +9,10 @@ page-todo-list {
 
     .forth {
         background-color: lighten(cornflowerblue, 30%);
+    }
+
+    //class for snoozed items, it is possible to add here "display: none" or "visibility: hidden"
+    .snoozed {
+        background-color: sandybrown;
     }
 }

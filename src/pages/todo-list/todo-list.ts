@@ -51,7 +51,7 @@ export class TodoListPage {
     }
 
     isSnoozed(value) {
-        console.log(value);
+        return !value.hasOwnProperty("snoozed_until");
     }
 
 }

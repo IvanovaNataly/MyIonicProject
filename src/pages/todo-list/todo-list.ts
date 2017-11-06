@@ -10,7 +10,7 @@ export class TodoListPage {
     items: {};
     filteredItems: any[];
     isValid: boolean = false;
-    currentList: number;
+    currentListId: number;
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {
 
@@ -90,18 +90,18 @@ export class TodoListPage {
         return typeof(value) === "string";
     }
 
-    collapseSubItems(e, secondLevel) {
+    collapseSubItems(e, secondLevel, id) {
         this.isValid = !this.isValid;
+        this.currentListId = id;
         let target = event.currentTarget;
         var parent = target.parentElement;
         parent.classList.add("new-class");
         console.log(target.id);
-        
+
     }
 
-    collapseValidation(thirdLevel) {
-        // thirdLevel.elementRef.nativeElement.className = "third-level";
-        // console.log("third", thirdLevel.elementRef);
+    collapseValidation(data) {
+        if (data === this.currentListId)
         return this.isValid;
     }
 

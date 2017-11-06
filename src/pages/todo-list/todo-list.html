@@ -10,12 +10,13 @@
 <ion-content padding>
     <ion-list no-lines>
         <ng-container *ngFor="let item of items | keys">
+            {{item.key}}
             <ng-container *ngFor="let second of item.value | keys" >
 
                 <ng-container *ngIf="isString(second.value); then stringProperty else objectProperty"></ng-container>
 
                 <ng-template #stringProperty>
-                    <button ion-button item-end icon-only icon-right (click)="collapseSubItems($event, secondLevel)" >
+                    <button ion-button item-end icon-only icon-right (click)="collapseSubItems($event, secondLevel)" attr.id="{{item.key}}">
                         <ion-icon name="arrow-dropdown" color="vibrant"></ion-icon>
                         <ion-item-sliding>
                             <ion-item class="second" #secondLevel>

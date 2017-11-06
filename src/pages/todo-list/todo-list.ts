@@ -79,11 +79,11 @@ export class TodoListPage {
                 }
             }
         }
+        // let keys = Object.keys(this.items);
+        // console.log(this.items[keys[0]]);
     }
 
-    ngOninit() {
 
-    }
 
 
     isString(value) {
@@ -95,8 +95,8 @@ export class TodoListPage {
         let target = event.currentTarget;
         var parent = target.parentElement;
         parent.classList.add("new-class");
-
-        console.log(this.currentList);
+        console.log(target.id);
+        
     }
 
     collapseValidation(thirdLevel) {

@@ -16,7 +16,7 @@
                 <ng-container *ngIf="isString(second.value); then stringProperty else objectProperty"></ng-container>
 
                 <ng-template #stringProperty>
-                    <button ion-button item-end icon-only icon-right (click)="collapseSubItems($event, secondLevel)" attr.id="{{item.key}}">
+                    <button ion-button item-end icon-only icon-right (click)="collapseSubItems($event, secondLevel, item.key)" attr.id="{{item.key}}">
                         <ion-icon name="arrow-dropdown" color="vibrant"></ion-icon>
                         <ion-item-sliding>
                             <ion-item class="second" #secondLevel>
@@ -38,7 +38,7 @@
 
                             <ng-template #stringPropertyThird>
                                 <ion-item-sliding>
-                                    <ion-item class="third" [ngClass]="{collapsed : collapseValidation(thirdLevel)}" #thirdLevel>
+                                    <ion-item class="third" [ngClass]="{collapsed : collapseValidation(item.key)}"  attr.data="{{item.key}}">
                                         {{ third.value }}
                                     </ion-item>
                                     <ion-item-options side="right">
@@ -52,7 +52,7 @@
 
                             <ng-template #objectPropertyThird >
                                 <ion-item-sliding *ngIf="!third.value.snoozed_until">
-                                    <ion-item class="forth" [ngClass]="{collapsed : isValid}">
+                                    <ion-item class="forth" [ngClass]="{collapsed : collapseValidation(item.key)}" attr.data="{{item.key}}">
                                         {{ third.value.title }}
                                     </ion-item>
                                     <ion-item-options side="right">

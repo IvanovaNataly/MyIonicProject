@@ -8,24 +8,27 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-list>
+    <ion-list no-lines>
         <ng-container *ngFor="let item of items | keys">
-            <ng-container *ngFor="let second of item.value | keys">
+            <ng-container *ngFor="let second of item.value | keys" >
 
                 <ng-container *ngIf="isString(second.value); then stringProperty else objectProperty"></ng-container>
 
                 <ng-template #stringProperty>
-                    <ion-item-sliding>
-                        <ion-item class="second">
-                            {{ second.value }}
-                        </ion-item>
-                        <ion-item-options side="right">
-                            <button ion-button color="primary">
-                                <ion-icon name="mail"></ion-icon>
-                                Email
-                            </button>
-                        </ion-item-options>
-                    </ion-item-sliding>
+                    <button ion-button item-end icon-only icon-right (click)="collapseSubItems($event, secondLevel)" >
+                        <ion-icon name="arrow-dropdown" color="vibrant"></ion-icon>
+                        <ion-item-sliding>
+                            <ion-item class="second" #secondLevel>
+                                {{ second.value }}
+                            </ion-item>
+                            <ion-item-options side="right">
+                                <button ion-button color="primary">
+                                    <ion-icon name="mail"></ion-icon>
+                                    Email
+                                </button>
+                            </ion-item-options>
+                        </ion-item-sliding>
+                    </button>
                 </ng-template>
 
                 <ng-template #objectProperty>
@@ -34,7 +37,7 @@
 
                             <ng-template #stringPropertyThird>
                                 <ion-item-sliding>
-                                    <ion-item class="third" >
+                                    <ion-item class="third" [ngClass]="{collapsed : collapseValidation(thirdLevel)}" #thirdLevel>
                                         {{ third.value }}
                                     </ion-item>
                                     <ion-item-options side="right">
@@ -48,7 +51,7 @@
 
                             <ng-template #objectPropertyThird >
                                 <ion-item-sliding *ngIf="!third.value.snoozed_until">
-                                    <ion-item class="forth">
+                                    <ion-item class="forth" [ngClass]="{collapsed : isValid}">
                                         {{ third.value.title }}
                                     </ion-item>
                                     <ion-item-options side="right">

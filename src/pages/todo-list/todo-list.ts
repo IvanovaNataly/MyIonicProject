@@ -9,9 +9,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class TodoListPage {
     items: {};
     filteredItems: any[];
-    isValid: boolean = true;
+    isValid: boolean = false;
+    currentList: number;
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {
+
         this.items = {
             goal_id_1: {
                 title: 'Business Coalboration',
@@ -40,17 +42,74 @@ export class TodoListPage {
                         status: 'ACTIVE',
                         title: 'Some weekly results'
                     },
+                    status: 'COMPLETED',
+                    title: 'Sum monthly results'
+                }
+            },
+
+            goal_id_10: {
+                title: 'Business Coalboration',
+                goal_id_2: {
+                    title: 'Find Partnets',
+                    goal_id_3: {
+                        status: 'ACTIVE',
+                        title: 'Market reserach'
+                    },
+                    goal_id_4: {
+                        snoozed_until: '2018-01-18',
+                        status: 'ACTIVE',
+                        title: 'Meet 3 potential partners'
+                    },
+                    goal_id_5: {
                         status: 'COMPLETED',
-                        title: 'Sum monthly results'
+                        title: 'Create a Facebook group'
+                    }
+                },
+                goal_id_6: {
+                    goal_id_7: {
+                        status: 'ACTIVE',
+                        title: 'Some weekly results'
+                    },
+                    goal_id_8: {
+                        status: 'ACTIVE',
+                        title: 'Some weekly results'
+                    },
+                    status: 'COMPLETED',
+                    title: 'Sum monthly results'
                 }
             }
         }
+    }
+
+    ngOninit() {
+
     }
 
 
     isString(value) {
         return typeof(value) === "string";
     }
+
+    collapseSubItems(e, secondLevel) {
+        this.isValid = !this.isValid;
+        let target = event.currentTarget;
+        var parent = target.parentElement;
+        parent.classList.add("new-class");
+
+        console.log(this.currentList);
+    }
+
+    collapseValidation(thirdLevel) {
+        // thirdLevel.elementRef.nativeElement.className = "third-level";
+        // console.log("third", thirdLevel.elementRef);
+        return this.isValid;
+    }
+
+    setId(secondLevel) {
+        this.currentList = secondLevel.id;
+        console.log("id", this.currentList);
+    }
+
 
 
 }

@@ -15,4 +15,14 @@ page-todo-list {
     .snoozed {
         background-color: sandybrown;
     }
+
+    .ion-item {
+        trasition: all 0.5s linear;
+    }
+
+    .collapsed {
+        height: 0;
+        line-height: 0;
+        min-height: 0;
+    }
 }

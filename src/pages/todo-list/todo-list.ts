@@ -9,7 +9,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class TodoListPage {
     items: {};
     isValid: any[];
-    liked: boolean = true;
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {
         this.items = {
@@ -85,7 +84,6 @@ export class TodoListPage {
     }
 
     collapseSubItems(id) {
-        this.liked = !this.liked;
         let index =  this.isValid.indexOf(id);
         if ( index > -1 ) {
             this.isValid.splice(index, 1);

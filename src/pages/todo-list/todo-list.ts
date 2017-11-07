@@ -8,12 +8,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TodoListPage {
     items: {};
-    filteredItems: any[];
-    isValid: boolean = false;
-    currentListId: number;
+    isValid: any[];
+    liked: boolean = true;
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {
-
         this.items = {
             goal_id_1: {
                 title: 'Business Coalboration',
@@ -49,28 +47,28 @@ export class TodoListPage {
 
             goal_id_10: {
                 title: 'Business Coalboration',
-                goal_id_2: {
+                goal_id_20: {
                     title: 'Find Partnets',
-                    goal_id_3: {
+                    goal_id_30: {
                         status: 'ACTIVE',
                         title: 'Market reserach'
                     },
-                    goal_id_4: {
+                    goal_id_40: {
                         snoozed_until: '2018-01-18',
                         status: 'ACTIVE',
                         title: 'Meet 3 potential partners'
                     },
-                    goal_id_5: {
+                    goal_id_50: {
                         status: 'COMPLETED',
                         title: 'Create a Facebook group'
                     }
                 },
-                goal_id_6: {
-                    goal_id_7: {
+                goal_id_60: {
+                    goal_id_70: {
                         status: 'ACTIVE',
                         title: 'Some weekly results'
                     },
-                    goal_id_8: {
+                    goal_id_80: {
                         status: 'ACTIVE',
                         title: 'Some weekly results'
                     },
@@ -79,37 +77,24 @@ export class TodoListPage {
                 }
             }
         }
-        // let keys = Object.keys(this.items);
-        // console.log(this.items[keys[0]]);
+        this.isValid = [];
     }
-
-
-
 
     isString(value) {
         return typeof(value) === "string";
     }
 
-    collapseSubItems(e, secondLevel, id) {
-        this.isValid = !this.isValid;
-        this.currentListId = id;
-        let target = event.currentTarget;
-        var parent = target.parentElement;
-        parent.classList.add("new-class");
-        console.log(target.id);
-
+    collapseSubItems(id) {
+        this.liked = !this.liked;
+        let index =  this.isValid.indexOf(id);
+        if ( index > -1 ) {
+            this.isValid.splice(index, 1);
+        }
+        else this.isValid.push(id);
     }
 
     collapseValidation(data) {
-        if (data === this.currentListId)
-        return this.isValid;
+        if ( this.isValid.indexOf(data) > -1 )
+            return true;
     }
-
-    setId(secondLevel) {
-        this.currentList = secondLevel.id;
-        console.log("id", this.currentList);
-    }
-
-
-
 }

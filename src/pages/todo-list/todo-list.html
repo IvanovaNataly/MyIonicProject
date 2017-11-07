@@ -10,26 +10,23 @@
 <ion-content padding>
     <ion-list no-lines>
         <ng-container *ngFor="let item of items | keys">
-            {{item.key}}
             <ng-container *ngFor="let second of item.value | keys" >
 
                 <ng-container *ngIf="isString(second.value); then stringProperty else objectProperty"></ng-container>
 
                 <ng-template #stringProperty>
-                    <button ion-button item-end icon-only icon-right (click)="collapseSubItems($event, secondLevel, item.key)" attr.id="{{item.key}}">
-                        <ion-icon name="arrow-dropdown" color="vibrant"></ion-icon>
-                        <ion-item-sliding>
-                            <ion-item class="second" #secondLevel>
-                                {{ second.value }}
-                            </ion-item>
-                            <ion-item-options side="right">
-                                <button ion-button color="primary">
-                                    <ion-icon name="mail"></ion-icon>
-                                    Email
-                                </button>
-                            </ion-item-options>
-                        </ion-item-sliding>
-                    </button>
+                    <ion-item-sliding>
+                        <ion-item class="second" (click)="collapseSubItems(item.key)" attr.id="{{item.key}}">
+                            {{ second.value }}
+                            <ion-icon [name]="collapseValidation(item.key) ? 'arrow-up' : 'arrow-down'" item-end></ion-icon>
+                        </ion-item>
+                        <ion-item-options side="right">
+                            <button ion-button color="primary">
+                                <ion-icon name="mail"></ion-icon>
+                                Email
+                            </button>
+                        </ion-item-options>
+                    </ion-item-sliding>
                 </ng-template>
 
                 <ng-template #objectProperty>
@@ -38,8 +35,10 @@
 
                             <ng-template #stringPropertyThird>
                                 <ion-item-sliding>
-                                    <ion-item class="third" [ngClass]="{collapsed : collapseValidation(item.key)}"  attr.data="{{item.key}}">
+                                    <ion-item class="third" [ngClass]="{collapsed : collapseValidation(item.key)}" (click)="collapseSubItems(second.key)"
+                                              attr.data-main="{{item.key}}" attr.id="{{second.key}}">
                                         {{ third.value }}
+                                        <ion-icon [name]="collapseValidation(second.key) ? 'arrow-up' : 'arrow-down'" item-end></ion-icon>
                                     </ion-item>
                                     <ion-item-options side="right">
                                         <button ion-button color="primary">
@@ -52,7 +51,8 @@
 
                             <ng-template #objectPropertyThird >
                                 <ion-item-sliding *ngIf="!third.value.snoozed_until">
-                                    <ion-item class="forth" [ngClass]="{collapsed : collapseValidation(item.key)}" attr.data="{{item.key}}">
+                                    <ion-item class="forth" [ngClass]="{collapsed : collapseValidation(item.key) || collapseValidation(second.key)}"
+                                              attr.data-main="{{item.key}}" attr.data-secondary="{{second.key}}">
                                         {{ third.value.title }}
                                     </ion-item>
                                     <ion-item-options side="right">

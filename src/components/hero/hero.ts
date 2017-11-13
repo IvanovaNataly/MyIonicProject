@@ -13,4 +13,6 @@ export class HeroComponent {
         this.text = 'This is a Hero Component';
     }
 
+
+
 }

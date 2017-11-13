@@ -9,14 +9,13 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-
 @Component({
     templateUrl: 'app.html'
 })
 export class MyApp {
     @ViewChild(Nav) nav: Nav;
 
-    rootPage = TabsPage;
+    rootPage = HelloIonicPage; //TabsPage
     // pages: Array<{title: string, component: any}>;
     pages: {};
     objectKeys = Object.keys;

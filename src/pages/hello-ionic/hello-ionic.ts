@@ -38,7 +38,7 @@ export class HelloIonicPage implements OnInit{
     // }
 
     ngOnInit(): void {
-        let headers = new HttpHeaders({ 'Authorization': 'Bearer f2e2b007-2d83-49ac-9ed4-c938ecf31a67', "Access-Control-Allow-Origin": "http://localhost:8100", "Access-Control-Max-Age": "3600", "Access-Control-Allow-Methods": "POST, GET, OPTIONS, DELETE", "Access-Control-Allow-Credentials": "true", 'Content-Type': 'application/x-www-form-urlencoded'  });
+        let headers = new HttpHeaders({ 'Authorization': 'Bearer f2e2b007-2d83-49ac-9ed4-c938ecf31a67', 'Access-Control-Allow-Origin': "*", "Access-Control-Max-Age": "3600", "Access-Control-Allow-Methods": "POST, GET, OPTIONS, DELETE", "Access-Control-Allow-Credentials": "true", 'Content-Type': 'application/x-www-form-urlencoded'  });
 
         this.http.get('https://api.constantcontact.com/v2/contacts?status=ALL&limit=50&api_key=xvqknx4yfqa9hfxmzjrmbu4s', {
                 headers: headers

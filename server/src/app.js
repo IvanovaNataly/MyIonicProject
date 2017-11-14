@@ -1,6 +1,3 @@
-/**
- * Created by Yalovich on 19/08/2017.
- */
 
 
 module.exports = (function App()
@@ -8,6 +5,7 @@ module.exports = (function App()
 	function getBands()
 	{
 		return new Promise(function(resolve, reject) {
+
 
 			resolve([{
 				name: "Snatam Kaur",

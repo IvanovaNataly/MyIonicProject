@@ -9,23 +9,29 @@ export class MailServiceProvider {
     logError: any;
 
     constructor(private http: HttpClient) {
-        this.endpoint = "https://us17.api.mailchimp.com/3.0";
+        // this.endpoint = "https://jsonplaceholder.typicode.com/users";
+        this.endpoint = "https://us17.api.mailchimp.com/3.0/lists";
     }
 
     getMailChimp() {
         console.log('Hello MailServiceProvider Provider');
 
-        var authHeader = new HttpHeaders();
-        authHeader.append('Authorization', 'Bearer ' + 'f94c8ea7e27ad68780010200144334ea-us17');
-        console.log(authHeader);
-
-
         return new Promise((resolve, reject) => {
-            this.http.get("https://us17.api.mailchimp.com/3.0/lists", {
-                headers: authHeader
-            } ).subscribe(response => resolve(response),
+            this.http.get(this.endpoint).subscribe(response => resolve(response),
                 error => reject(error));
         });
+
+        // var authHeader = new HttpHeaders();
+        // authHeader.append('Authorization', 'Bearer ' + 'f94c8ea7e27ad68780010200144334ea-us17');
+        // console.log(authHeader);
+
+
+        // return new Promise((resolve, reject) => {
+        //     this.http.get("https://us17.api.mailchimp.com/3.0/lists", {
+        //         headers: authHeader
+        //     } ).subscribe(response => resolve(response),
+        //         error => reject(error));
+        // });
 
         // this.http.get('http://localhost:3001/api/protected/random-quote', {
         //     headers: authHeader

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { MailServiceProvider } from "../../providers/mail-service/mail-service";
+import { MailServiceProvider } from "../../providers/mail-service/mail-service";
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Component({
@@ -28,8 +28,9 @@ export class HelloIonicPage implements OnInit{
 
     ngOnInit(): void {
         this.http.get('https://us17.api.mailchimp.com/3.0/lists', {
-            headers: new HttpHeaders().set('Authorization', 'Basic TmF0YWx5OmY5NGM4ZWE3ZTI3YWQ2ODc4MDAxMDIwMDE0NDMzNGVhLXVzMTc=').set('postman-token', '459b7184-9678-b900-4862-7d63a185446a')
-        }).subscribe(data => {
+            headers: new HttpHeaders().set('Authorization', 'Basic f94c8ea7e27ad68780010200144334ea-us17')
+        }
+        ).subscribe(data => {
             this.mails = data;
             console.log(this.mails);
         });
